@@ -18,9 +18,9 @@ const App = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(backendURL);
+      const response = await axios.get(`${backendURL}/user/get-all-users`);
       setData(response.data);
-      dispatch(updateUserRole(response.data.role));
+      dispatch(updateUserRole("guest"));
     } catch (error) {
       console.log(error);
     }
